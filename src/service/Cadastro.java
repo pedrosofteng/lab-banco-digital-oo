@@ -21,7 +21,7 @@ public class Cadastro {
         this.senha = senha;
 
         System.out.print("Informe seu nome completo: ");
-        this.nome = validar.lerTexto();
+        this.nome = validar.lerSomenteFrases();
         Cliente cliente = new Cliente(nome);
         ContaCorrente contaCorrente = new ContaCorrente();
         contaCorrente.criarConta(cliente);

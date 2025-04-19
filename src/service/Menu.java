@@ -2,8 +2,6 @@ package service;
 
 import model.ContaCorrente;
 
-import java.util.Scanner;
-
 public class Menu {
     private ValidarInformacoes validar = new ValidarInformacoes();
     private String login;
@@ -41,7 +39,7 @@ public class Menu {
                     break;
                 case 2:
                     System.out.print("\nDigite o login para cadastrar: ");
-                    login = validar.lerTexto();
+                    login = validar.lerSomentePalavras();
                     System.out.print("Digite a senha para cadastrar: ");
                     senha = validar.lerTexto();
                     Cadastro cadastro = new Cadastro(login, senha);

@@ -4,8 +4,33 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ValidarInformacoes {
-
     private Scanner scanner = new Scanner(System.in);
+
+    public String lerSomentePalavras() {
+        String texto;
+        while (true) {
+            texto = scanner.nextLine();
+            if (texto.matches("[a-zA-Z]+")) {
+                break;
+            } else {
+                System.out.println("Erro: digite apenas letras.");
+            }
+        }
+        return texto;
+    }
+
+    public String lerSomenteFrases() {
+        String texto;
+        while (true) {
+            texto = scanner.nextLine();
+            if (texto.matches("[\\p{L} ]+")) {
+                break;
+            } else {
+                System.out.println("Erro: digite apenas letras.");
+            }
+        }
+        return texto;
+    }
 
     public int lerInteiro() {
         int numero = 0;
@@ -16,7 +41,7 @@ public class ValidarInformacoes {
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Por favor, digite um número inteiro válido.");
-                scanner.nextLine(); // limpa a entrada inválida
+                scanner.nextLine();
                 continue;
             }
         }
